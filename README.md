@@ -14,3 +14,5 @@ as a fast way to remember what I have studied.
 What I have so far:
 1. Vim
 
+All that is done here is better explained at 
+[my website](https://rafaelpcarneiro.github.io/)
