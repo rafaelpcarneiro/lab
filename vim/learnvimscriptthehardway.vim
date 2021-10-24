@@ -36,9 +36,9 @@ syntax match myComment /^".*/ contains=stringToTest,
 syntax match  stringToTest /String to Test Commands/ contained
 syntax match  myExercise   /Exercise [0-9]\+/        contained
 
-syntax region myTitle    start=/"[=]\{10,\}/   end=/"[=]\{10,\}/ contained
-syntax region stringTest start=/" beginString/ end=/endString/   contained
-syntax region myExText   start=/" ---/         end=/" ---/       contained
+syntax region myTitle    start=/"[=]\{10,\}/   end=/"[=]\{10,\}/     contained
+syntax region stringTest start=/" beginString/ end=/endString/       contained
+syntax region myExText   start=/" ---/         end=/" ---[ ]\{1,\}$/ contained
 
 hi myComment      ctermfg=245  ctermbg=none 
 hi stringToTest   ctermfg=red  ctermbg=none  cterm=underline
@@ -46,7 +46,6 @@ hi stringTest     ctermfg=130  ctermbg=none
 hi myTitle        ctermfg=243  ctermbg=234
 hi myExercise     ctermfg=blue ctermbg=none  cterm=underline
 hi myExText       ctermfg=33   ctermbg=none  cterm=italic
-
 
 
 
@@ -62,7 +61,6 @@ hi myExText       ctermfg=33   ctermbg=none  cterm=italic
 "   comments 5 Supplying a count to a map 6 Using multiple Ex commands in a
 "   map 7 Using space characters in a map 8 ...
 " endString
-           
 
 
 
@@ -71,47 +69,47 @@ hi myExText       ctermfg=33   ctermbg=none  cterm=italic
 "===============================================================================
 
 " Exercise 1 
-" ---
-" Create a mapping similar to the one we just looked at, but for single
-" quotes instead of double quotes.
-" ---
+" ---                                                                           
+" Create a mapping similar to the one we just looked at, but for single         
+" quotes instead of double quotes.                                              
+" ---                                                                           
 
 inoremap <buffer> <localleader>q <esc>bi'<esc>ea'<esc>
 
 
 " Exercise 2
-" ---
-" Try using vnoremap to add a mapping that will wrap whatever text you
-" have visually selected in quotes. You'll probably need the `< and `>
-" commands for this, so read up on them with :help `<.
-" ---
+" ---                                                                           
+" Try using vnoremap to add a mapping that will wrap whatever text you          
+" have visually selected in quotes. You'll probably need the `< and `>          
+" commands for this, so read up on them with :help `<.                          
+" ---                                                                           
 
 vnoremap <buffer> <localleader>q <esc>`>a'<esc>`<i'<esc>
 
 
 " Exercise 3
-" ---
-" Map H in normal mode to go to the beginning of the current line. Since h
-" moves left you can think of H as a "stronger" h.
-" ---
+" ---                                                                           
+" Map H in normal mode to go to the beginning of the current line. Since h      
+" moves left you can think of H as a "stronger" h.                              
+" ---                                                                           
 
 nnoremap <buffer> H 0
 
 
 " Exercise 4
-" ---
-" Map L in normal mode to go to the end of the current line. Since l moves
-" right you can think of L as a "stronger" l.
-" ---
+" ---                                                                           
+" Map L in normal mode to go to the end of the current line. Since l moves      
+" right you can think of L as a "stronger" l.                                   
+" ---                                                                           
 
 nnoremap <buffer> L $
 
 
 " Exercise 5
-" ---
-" Find out what commands you just overwrote by reading :help H and :help
-" L. Decide whether you care about them.
-" ---
+" ---                                                                           
+" Find out what commands you just overwrote by reading :help H and :help        
+" L. Decide whether you care about them.                                        
+" ---                                                                           
 
 "===============================================================================
 "                                  chapter 12                                   
